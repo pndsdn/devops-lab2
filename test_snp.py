@@ -1,6 +1,4 @@
-import pytest
-import tornado
-from tornado.httpclient import HTTPClient, AsyncHTTPClient
+from tornado.httpclient import HTTPClient
 
 
 def fetch(url):
