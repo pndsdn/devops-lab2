@@ -1,3 +1,4 @@
+import pytest
 from tornado.httpclient import HTTPClient
 
 
@@ -13,4 +14,3 @@ assert fetch('http://127.0.0.1:8080/write?message=one,%20two,three,four%20,five-
 assert fetch('http://127.0.0.1:8080/write?message=this%20is%20mine%20message.') == 'This is mine message.'
 assert fetch('http://127.0.0.1:8080/write?message=first%20sentence.second%20sentence%20.third%20sentence') \
        == 'First sentence. Second sentence. Third sentence.'
-
