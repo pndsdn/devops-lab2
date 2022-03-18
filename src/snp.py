@@ -10,11 +10,12 @@ class StringFormingRequestHandler(tornado.web.RequestHandler):
 
 
 def make_app():
-    app = tornado.web.Application([
+    return tornado.web.Application([
         (r'/write', StringFormingRequestHandler)
     ])
 
-    if __name__ == '__main__':
-        app.listen(8080)
-        tornado.ioloop.IOLoop.current().start()
 
+if __name__ == '__main__':
+    app = make_app()
+    app.listen(8080)
+    tornado.ioloop.IOLoop.current().start()
