@@ -1,9 +1,4 @@
-def nameFormating(self):
-    name = self.get_argument('name')
-    self.write(f'Hello, {name[0].capitalize()}{name[1:]}!')
-
-
-def stringFormating(self):
+def StringForming(self):
     message = self.get_argument('message')
     while '  ' in message:
         message.replace('  ', ' ')
@@ -28,13 +23,6 @@ def stringFormating(self):
 
             if message[ch - 1] == ' ':
                 message = f'{message[:ch - 1]}{message[ch:]}'
-
-        if message[ch] == '-':
-            if message[ch + 1] != ' ':
-                message = f'{message[:ch + 1]} {message[ch + 1:]}'
-
-            if message[ch - 1] != ' ':
-                message = f'{message[:ch]} {message[ch:]}'
 
         ch += 1
 

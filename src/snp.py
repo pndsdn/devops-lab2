@@ -1,24 +1,20 @@
-from funcional import nameFormating, stringFormating
+from src.funcional import StringForming
 
 import tornado.ioloop
 import tornado.web
 
 
-class nameRequestHandler(tornado.web.RequestHandler):
+class StringFormingRequestHandler(tornado.web.RequestHandler):
     def get(self):
-        nameFormating(self)
+        StringForming(self)
 
 
-class stringFormatingRequestHandler(tornado.web.RequestHandler):
-    def get(self):
-        stringFormating(self)
+def make_app():
+    app = tornado.web.Application([
+        (r'/write', StringFormingRequestHandler)
+    ])
 
+    if __name__ == '__main__':
+        app.listen(8080)
+        tornado.ioloop.IOLoop.current().start()
 
-app = tornado.web.Application([
-    (r'/user', nameRequestHandler),
-    (r'/write', stringFormatingRequestHandler)
-])
-
-if __name__ == '__main__':
-    app.listen(8081)
-    tornado.ioloop.IOLoop.current().start()
