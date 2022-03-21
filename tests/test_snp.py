@@ -22,6 +22,6 @@ class TestSnpApp(AsyncHTTPTestCase, ABC):
         ]
 
         for test_case in test_table:
-            response = self.fetch(f"/write?message=={test_case.value}")
+            response = self.fetch(f"/write?message={test_case.value}")
             self.assertEqual(response.code, 200)
             self.assertEqual(response.body.decode(), test_case.expected)
