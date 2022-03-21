@@ -11,7 +11,7 @@ class TestSnpApp(AsyncHTTPTestCase, ABC):
     def get_app(self) -> tornado.web.Application:
         return snp.make_app()
 
-    def test_message_request(self):
+    def test_message_request(self) -> None:
         positive_case = namedtuple("positive_case", ["value", "expected"])
         test_table = [
             positive_case('one,%20two%20,three%20,four,%20five.'

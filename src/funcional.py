@@ -1,4 +1,4 @@
-def StringForming(self):
+def StringForming(self) -> None:
     message = self.get_argument('message')
     while '  ' in message:
         message.replace('  ', ' ')

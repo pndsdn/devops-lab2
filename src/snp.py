@@ -5,11 +5,11 @@ import tornado.web
 
 
 class StringFormingRequestHandler(tornado.web.RequestHandler):
-    def get(self):
+    def get(self) -> None:
         StringForming(self)
 
 
-def make_app():
+def make_app() -> tornado.web.Application:
     return tornado.web.Application([
         (r'/write', StringFormingRequestHandler)
     ])
