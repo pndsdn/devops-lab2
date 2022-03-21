@@ -1,4 +1,4 @@
-import snp
+import src.snp
 def string_forming(self: snp.StringFormingRequestHandler) -> None:
     message = self.get_argument('message')
     while '  ' in message:
