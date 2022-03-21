@@ -1,4 +1,4 @@
-from src.funcional import StringForming
+from src.funcional import string_forming
 
 import tornado.ioloop
 import tornado.web
@@ -6,7 +6,7 @@ import tornado.web
 
 class StringFormingRequestHandler(tornado.web.RequestHandler):
     def get(self) -> None:
-        StringForming(self)
+        string_forming(self)
 
 
 def make_app() -> tornado.web.Application:
